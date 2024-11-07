@@ -5,26 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="output.css">
+   
 </head>
 <body >
    <main class=" mx-2 flex justify-center flex-col items-center">
     <h2 class=" w-full md:w-80 h-9 md:h-12 text-[#FF67B2] md:text-3xl text-center text-3xl font-semibold leading-10 mt-5">Doughnut's Shop</h2>
-    <div class="w-full mt-6">
-        <section class="w-full md:h-20 border border-gray-300 flex flex-col md:flex-row items-center justify-between ">
+
+    <div class="w-full">
+             <!-- nav bar -->
+        <div class="px-10 md:w-full md:h-16 shadow-lg border rounded-md border-gray-300 flex flex-col md:flex-row  md:items-center justify-between gap-[10px] m-3 md:m-auto md:mt-2">
              <!-- price -->
-             <div class="w-80 h-11 flex flex-row justify-center  items-center">
-
-                <p class="w-36 h-full flex flex-row text-center items-center justify-center ">Price : N <span class="border border-gray-500 h-full text-center flex justify-center items-center rounded-md p-2 ml-2">4000</span></p>
-
-
-                <div class="w-36 h-full flex flex-row text-center items-center justify-center bg-[#FF67B2] rounded-lg">
-                    <button>Edit price</button>
+            <div class="flex flex-row items-center h-11 w-72 " id="priceSection">
+                <div class="flex  align-middle items-center w-[40%] h-[70%]">
+                    <label className="flex-1 mr-[10px] text-red-900 text-left md:text-right text-[18px] md:text-[20px]">Price</label>
+                    <span className="text-[40px] mr-[20px] md:text-[25px]">:$</span>
+                    <input type="number" value="150" id="changePrice"  class="border px-1 h-full shadow-lg rounded-md w-[60%] outline-none ml-2">
+                </div>
+                <div class="w-36 h-[70%] text-white flex flex-row text-center items-center justify-center bg-[#FF67B2] rounded-lg ml-2">
+                    <button id="changePriceBtn" class="editBtn" name="changePrice">Edit price</button>
                     <img src="/src/assets/editIcon.svg" alt=" icon" class="w-6 h-6">
                 </div>
             </div>
 
-        </section>
+
+          <!-- inventory -->
+          <div class="flex flex-row items-center h-11 w-72 justify-between " id="QuantitySection">
+            <div class="flex  align-middle items-center w-[60%] h-[70%]">
+                <label className="flex-1 mr-[10px] text-red-900 text-left md:text-right text-[18px] md:text-[20px]">Quantity</label>
+                <span className="text-[40px] mr-[20px] md:text-[25px]">:$</span>
+                <input type="number" id="changeQuantity" placeholder="200" value="200"  class="border px-2 h-full shadow-lg rounded-md w-[60%] outline-none ml-2">
+            </div>
+            <div class="w-36 h-[70%] text-white flex flex-row text-center items-center justify-center bg-[#FF67B2] rounded-lg">
+                <button id="QuantityBtn" class="text-xs editBtn" name="changeQuantity">Add Doughnut</button>
+                <img src="/src/assets/editIcon.svg" alt=" icon" class="w-6 h-4">
+            </div>
+        </div>
+        <!-- Available -->
+        <div class="flex flex-row items-center h-11 w-72 justify-between">
+            <div class="flex justify-between align-middle items-center">
+                <label className="flex-1 mr-[10px] text-red-900 text-left md:text-right text-[18px] md:text-[20px]">Available</label>
+                <span className="text-[40px] mr-[20px] md:text-[25px]">:</span>
+                <span class="border px-3 ml-2 h-[70%] shadow-lg rounded-md" id="availableQuantity">200</span>
+            </div>
+    
+        </div> 
+          
+        </div>
+
+        <!-- body -->
+         <div class="md:w-full flex flex-row items-center ">
+
+            <!-- sales section -->
+             <div class="relative w-full md:w-[60%] flex flex-col justify-center items-center">
+                <!-- image -->
+              <div class="relative w-full md:w-[25rem] h-[28rem] flex items-center  justify-center">
+                  <!-- image container -->
+                  <div class="w-full md:w-96 h-80  border-[#FF67B2]  md:border-2 rounded-md">
+                  
+                  </div>
+                  <!-- image -->
+                  <div class="top-12 left-0 right-4 absolute w-full md:w-80 h-96">
+                     <!-- image -->
+                     <img src="/src/assets/donutsImag.png" alt="image" class=" inset-0 object-cover w-full h-full">
+                 </div>
+              </div>
+
+             
+             <div class="h-[12rem] w-[60%]  md:h-[10rem] flex flex-col items-center mb-10">
+                 <!-- input section -->
+                <div class="w-full h-40 md:w-[31rem] md:h-20 flex justify-center md:justify-normal flex-col md:flex-row ">
+                    <div class="flex flex-col w-[23rem] md:h-32">
+                        <label>Name</label>
+                        <input type="text" placeholder="buyers name" id="buyersName" class="w-full h-10 outline-none px-3 border border-gray-200 shadow-md rounded-md">
+                    </div>
+                    <div class="flex flex-col md:w-40 md:ml-3">
+                        <label>Quantity</label>
+                        <input type="number"  placeholder="Quantity" id="doughNutQuantity" class="w-full h-10 outline-none px-3 border border-gray-200 shadow-md rounded-md">
+                    </div> 
+                </div>
+
+                <div class="w-[50%] md:w-[25.5rem] bg-blue-300 h-14 rounded-md" id="sellDoughnutBtn">
+                    <button class="w-full h-full text-white ">Sell Doughnut</button>
+                </div>
+             </div>
+             </div>
+
+
+
+             <!-- history section -->
+              <div>
+
+              </div>
+         </div>
     </div>
    </main>
+   <script src="/src/script.js"></script>
 </body>
 </html>
