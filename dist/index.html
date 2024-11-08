@@ -19,11 +19,11 @@
                 <div class="flex  align-middle items-center w-[40%] h-[70%]">
                     <label className="flex-1 mr-[10px] text-red-900 text-left md:text-right text-[18px] md:text-[20px]">Price</label>
                     <span className="text-[40px] mr-[20px] md:text-[25px]">:$</span>
-                    <input type="number" value="150" id="changePrice"  class="border px-1 h-full shadow-lg rounded-md w-[60%] outline-none ml-2">
+                    <input type="number"  id="changePrice"  class="border px-1 h-full shadow-lg rounded-md w-[60%] outline-none ml-2">
                 </div>
-                <div class="w-36 h-[70%] text-white flex flex-row text-center items-center justify-center bg-[#FF67B2] rounded-lg ml-2">
-                    <button id="changePriceBtn" class="editBtn" name="changePrice">Edit price</button>
-                    <img src="/src/assets/editIcon.svg" alt=" icon" class="w-6 h-6">
+                <div class="relative w-36 h-[70%] text-white flex flex-row text-center items-center justify-center bg-[#FF67B2] rounded-lg ml-2">
+                    <button id="changePriceBtn" class="editBtn w-full h-full" name="changePrice">Set price</button>
+                    <img src="/src/assets/editIcon.svg" alt=" icon" class="w-6 h-6 absolute right-2">
                 </div>
             </div>
 
@@ -35,9 +35,9 @@
                 <span className="text-[40px] mr-[20px] md:text-[25px]">:$</span>
                 <input type="number" id="changeQuantity" placeholder="200" value="200"  class="border px-2 h-full shadow-lg rounded-md w-[60%] outline-none ml-2">
             </div>
-            <div class="w-36 h-[70%] text-white flex flex-row text-center items-center justify-center bg-[#FF67B2] rounded-lg">
-                <button id="QuantityBtn" class="text-xs editBtn" name="changeQuantity">Add Doughnut</button>
-                <img src="/src/assets/editIcon.svg" alt=" icon" class="w-6 h-4">
+            <div class="relative w-36 h-[70%] text-white flex flex-row text-center items-center justify-center bg-[#FF67B2] rounded-lg">
+                <button id="QuantityBtn" class="text-xs editBtn h-full w-full" name="changeQuantity">Set Quantity</button>
+                <img src="/src/assets/editIcon.svg" alt=" icon" class="w-6 h-4 absolute right-2">
             </div>
         </div>
         <!-- Available -->
