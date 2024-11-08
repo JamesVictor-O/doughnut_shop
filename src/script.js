@@ -6,7 +6,7 @@ let sellBtn=document.getElementById("sellDoughnutBtn")
 // and doughnut and change price btn
 let editBtns=document.querySelectorAll(".editBtn")
 let totalDoughts=document.querySelector("#changeQuantity").value;
-let isReadOnly=false
+let isReadOnly=false;
 
 
 // function for selling doughnuts
@@ -42,6 +42,7 @@ function makeSells(){
      buyersName.value="";
      quantityOfDoughnut.value=""
 
+
     TotalValue(recordKeeper) 
 };
 
@@ -53,14 +54,39 @@ function TotalValue(array){
     let totalDoughtnutSold=array.reduce((acc,cur)=>{
         return acc + cur.quantityOfDoughnut
     },0)
+
+    let cumulativeAmount=array.reduce((acc,cur)=>{
+        return acc + cur.amount
+    },0)
      
      let avl=inputedQuantity-totalDoughtnutSold;
+
      if(avl == 0) return alert("you self don try, go look for better thing chop")
     availableQuantity.innerHTML =avl;
 
-   console.log(array)
+   displayHistory(array,cumulativeAmount)
 }
 
+// display record in the history section
+function displayHistory(transactions,cumulativeAmount){
+    let historyContainer=document.getElementById("history")
+    let totalCumulativeAmount=document.getElementById("cumulativeAmount")
+    historyContainer.innerHTML="";
+
+
+
+    for(i=0; i < transactions.length; i++){
+        historyContainer.innerHTML += ` <div class="w-[95%] mx-2 flex flex-row justify-between border-b-2 border-gray-400 p-4">
+                            <h2>${transactions[i].buyersName}</h2>
+                            <div class="flex flex-row justify-between items-center w-48">
+                                <p class="mr-2">Quantity : <span class="ml-2">${transactions[i].quantityOfDoughnut}</span></p>
+                                <span class="border-2 border-gray-300 rounded-md w-20 h-6 text-center">${transactions[i].amount}</span>
+                            </div>
+                        </div>`
+    }
+
+totalCumulativeAmount.innerHTML="$" + cumulativeAmount
+}
 // function to updatePrice and quantity
 function updatePriceQuantity(btn){
     // updating the number of available doughnuts
